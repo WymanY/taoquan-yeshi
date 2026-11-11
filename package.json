@@ -1,0 +1,21 @@
+{
+  "name": "taoquan-yeshi",
+  "private": true,
+  "version": "1.0.0",
+  "description": "套圈夜市：手机浏览器里的限时套圈小游戏",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 43123 --strictPort",
+    "build": "tsc && vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 43124 --strictPort",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "test:e2e:preview": "playwright test -c playwright.preview.config.ts"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "typescript": "~7.0.2",
+    "vite": "^8.3.6",
+    "vitest": "^4.0.18"
+  }
+}

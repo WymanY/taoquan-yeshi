@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#140c28" />
+    <meta name="description" content="套圈夜市：用手指瞄准投掷，限时套中庙会奖品。" />
+    <title>套圈夜市</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  </head>
+  <body>
+    <div id="frame" data-phase="title">
+      <canvas id="game" data-testid="canvas" aria-label="套圈游戏画面"></canvas>
+      <header id="hud">
+        <div class="hud-score">
+          <p class="label">得分</p>
+          <p id="score" data-testid="score">0</p>
+          <p id="combo" data-testid="combo" hidden></p>
+        </div>
+        <div class="hud-time">
+          <p class="label">剩余</p>
+          <p id="timer" data-testid="timer">00:45</p>
+        </div>
+      </header>
+      <p id="banner" data-testid="banner" hidden></p>
+      <p id="hint">上拖瞄准，圈影套住木桩后松手</p>
+      <p id="pause" hidden>已暂停</p>
+      <button id="mute" type="button" data-testid="mute" aria-pressed="false">音效开</button>
+      <div class="screen" id="title-screen">
+        <section class="card" data-testid="title-card">
+          <div class="seal" aria-hidden="true"></div>
+          <h1>套圈夜市</h1>
+          <p class="lede">按住上拖，圈影套住木桩，松手投出。</p>
+          <ol>
+            <li>
+              <div>
+                <strong>向上拖动</strong>
+                <span>按住屏幕往上拉。拖得越远，圈子飞得越远。</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>左右对准</strong>
+                <span>挪动手指，让地上的圈影套住木桩。</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>松手投出</strong>
+                <span>圈影套准再松手。套中木桩就得分。</span>
+              </div>
+            </li>
+          </ol>
+          <p class="rule">限时 45 秒。连续套中，得分最多 ×3。</p>
+          <button id="start" class="primary" type="button" data-testid="start">开始挑战</button>
+          <p id="best" data-testid="best" hidden></p>
+        </section>
+      </div>
+      <div class="screen" id="results-screen">
+        <section class="card" data-testid="results">
+          <p class="kicker">时间到</p>
+          <p id="final-score" data-testid="final-score">0</p>
+          <p class="score-unit">分</p>
+          <p id="detail" data-testid="detail"></p>
+          <p id="rank" data-testid="rank"></p>
+          <p id="rank-line" data-testid="rank-line"></p>
+          <p id="record" data-testid="record"></p>
+          <button id="restart" class="primary" type="button" data-testid="restart">再来一局</button>
+          <button id="help" class="ghost" type="button" data-testid="help">玩法说明</button>
+        </section>
+      </div>
+      <p id="boot-error" hidden>这个浏览器画不出画布，换一个现代浏览器试试。</p>
+      <div id="live" class="sr-only" aria-live="polite"></div>
+    </div>
+    <div id="rotate-hint">
+      <p>请竖持手机</p>
+      <span>竖着玩，摊位才看得全。</span>
+    </div>
+    <noscript>请开启 JavaScript 后再来套圈。</noscript>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
